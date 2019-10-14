@@ -6,6 +6,7 @@ namespace App\Tests;
 
 use App\Model\TestModel;
 use DateTime;
+use DateTimeImmutable;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class SerializerTest extends KernelTestCase
@@ -51,7 +52,7 @@ class SerializerTest extends KernelTestCase
 
     public function testPass2_when_not_in_trait()
     {
-        $date = new DateTime('2007-06-29 09:41:00');
+        $date = new DateTimeImmutable('2007-06-29 09:41:00');
 
         $expected = (new TestModel())
             ->setDate3($date);

@@ -4,31 +4,31 @@ declare(strict_types=1);
 
 namespace App\Model;
 
-use DateTime;
+use DateTimeImmutable;
 
 class TestModel
 {
     use TestTrait;
 
     /**
-     * @var DateTime
+     * @var DateTimeImmutable
      */
     private $date3;
 
     /**
-     * @return DateTime
+     * @return DateTimeImmutable
      */
-    public function getDate3(): DateTime
+    public function getDate3(): DateTimeImmutable
     {
         return $this->date3;
     }
 
     /**
-     * @param DateTime $date3
+     * @param DateTimeImmutable $date3
      *
      * @return self
      */
-    public function setDate3(DateTime $date3): self
+    public function setDate3(DateTimeImmutable $date3): self
     {
         $this->date3 = $date3;
         return $this;
