@@ -48,4 +48,21 @@ class SerializerTest extends KernelTestCase
 
         $this->assertEquals($expected, $actual);
     }
+
+    public function testPass2_when_not_in_trait()
+    {
+        $date = new DateTime('2007-06-29 09:41:00');
+
+        $expected = (new TestModel())
+            ->setDate3($date);
+
+        $input = [
+            'date3' => '2007-06-29T09:41:00+00:00',
+        ];
+
+        $serializer = static::$container->get('serializer');
+        $actual = $serializer->denormalize($input, TestModel::class, 'json');
+
+        $this->assertEquals($expected, $actual);
+    }
 }
